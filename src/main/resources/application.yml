@@ -1,0 +1,74 @@
+aes:
+  encryption:
+    key: this-is-test-key
+server:
+  port: 7070   
+    
+spring:
+  main:
+    allow-bean-definition-overriding: true  
+  datasource:
+    url: jdbc:mysql://localhost:3306/electioncampaign
+    username: root
+    password: Orive@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: SEURITY-SERVICE   
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB        
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: hr.orivesolutions@gmail.com
+    password: ieyh njde yroo ebij
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            
+  
+    smtp:
+      connectiontimeout: 5000
+      timeout: 5000
+      writetimeout: 5000
+      auth: true
+      starttls:
+        enable: true
+      ssl:
+        enable: false
+    debug: true
+    
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 86400000 # a day
+      refresh-token:
+        expiration: 604800000 # 7 days
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+        
+#twilio:
+#  account:
+#    sid: AC9ce2e24fa85428c738462b5df8f468f4
+#  auth:
+#    token: 5687db3b8099c45c79499fd8985c3caf
+#  from:
+#    number: +16502001838 
+otp:
+  length: 6
