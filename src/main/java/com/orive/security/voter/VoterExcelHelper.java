@@ -61,8 +61,8 @@ public class VoterExcelHelper {
 			
 			//convert excel to list of product
 			
-			public static List<Voter> convertExcelToListOfvoters(InputStream is){
-				List<Voter> list = new ArrayList<>();
+			public static List<VoterDatabase> convertExcelToListOfvoters(InputStream is){
+				List<VoterDatabase> list = new ArrayList<>();
 				
 				try 
 				{
@@ -93,7 +93,7 @@ public class VoterExcelHelper {
 					
 					int cellId=0;
 					
-					Voter voters = new Voter();
+					VoterDatabase voters = new VoterDatabase();
 					
 					while(cells.hasNext()) 
 					{
@@ -105,20 +105,44 @@ public class VoterExcelHelper {
 	                        	voters.setSl(getNumericValue(currentCell));
 						     break;
                              case 1:
-                    	        voters.setVotername(getStringValue(currentCell));
+                    	        voters.setRegister_voter(getStringValue(currentCell));
                              break;
                              case 2:
-                            	 voters.setMobilenumber(getStringValue(currentCell));
+                            	 voters.setName(getStringValue(currentCell));
                              break;
                              case 3:
-                         	    voters.setState(getStringValue(currentCell));
+                         	    voters.setAreaname(getStringValue(currentCell));
                               break;
                              case 4:
-                         	    voters.setDistrict(getStringValue(currentCell));
+                         	    voters.setEmail(getStringValue(currentCell));
                               break;
                              case 5:
-                        	    voters.setPincode(getStringValue(currentCell));
-                             break;                                                                                    
+                        	    voters.setContacted(getStringValue(currentCell));
+                             break;
+                             case 6:
+                         	    voters.setAddress(getStringValue(currentCell));
+                              break;
+                             case 7:
+                          	    voters.setBlood_group(getStringValue(currentCell));
+                               break;
+                             case 8:
+                           	    voters.setVoter_id(getStringValue(currentCell));
+                                break;
+                             case 9:
+                            	voters.setVoter_categories(getStringValue(currentCell));
+                                break;
+                             case 10:
+                             	voters.setPhone(getNumericValue(currentCell));
+                                 break;
+                             case 11:
+                              	voters.setGender(getStringValue(currentCell));
+                                  break;
+                             case 12:
+                              	voters.setBirthdate(getLocalDateValue(currentCell));
+                                  break;
+                             case 13:
+                              	voters.setImage_upload(getByteArrayValue(currentCell));
+                                  break;
                             default:
                              break;
 						}

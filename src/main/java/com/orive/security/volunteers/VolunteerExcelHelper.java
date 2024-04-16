@@ -1,4 +1,4 @@
-package com.orive.security.volunteerDetails;
+package com.orive.security.volunteers;
 
 
 import java.io.ByteArrayInputStream;
@@ -48,8 +48,8 @@ public class VolunteerExcelHelper {
 			
 			//convert excel to list of product
 			
-			public static List<VolunteerDetails> convertExcelToListOfVolunteerDetails(InputStream is){
-				List<VolunteerDetails> list = new ArrayList<>();
+			public static List<Volunteers> convertExcelToListOfVolunteerDetails(InputStream is){
+				List<Volunteers> list = new ArrayList<>();
 				
 				try 
 				{
@@ -80,7 +80,7 @@ public class VolunteerExcelHelper {
 					
 					int cellId=0;
 					
-					VolunteerDetails volunteerDetails = new VolunteerDetails();
+					Volunteers volunteer = new Volunteers();
 					
 					while(cells.hasNext()) 
 					{
@@ -89,32 +89,41 @@ public class VolunteerExcelHelper {
 						switch (cellId) 
 						{
 	                         case 0:
-	                        	volunteerDetails.setSerialnumber(getNumericValue(currentCell));
+	                        	 volunteer.setSl(getNumericValue(currentCell));
 						     break;
                              case 1:
-                    	        volunteerDetails.setVolunteername(getStringValue(currentCell));
+                            	 volunteer.setName(getStringValue(currentCell));
                              break;
                              case 2:
-                            	 volunteerDetails.setVolunteerid(getStringValue(currentCell));
+                            	 volunteer.setGender(getStringValue(currentCell));
                              break;
                              case 3:
-                         	    volunteerDetails.setGender(getStringValue(currentCell));
+                            	 volunteer.setEmail(getStringValue(currentCell));
                               break;
                              case 4:
-                         	    volunteerDetails.setAddress(getStringValue(currentCell));
+                            	 volunteer.setAddress(getStringValue(currentCell));
                               break;
                              case 5:
-                        	    volunteerDetails.setMobilenumber(getNumericValue(currentCell));
+                            	 volunteer.setAreaname(getStringValue(currentCell));
                              break;
                              case 6:
-                        	   volunteerDetails.setEmailaddress(getStringValue(currentCell));
-                             break;                                                                                                   
+                            	 volunteer.setPhone(getNumericValue(currentCell));
+                             break; 
+                             case 7:
+                            	 volunteer.setPassword(getStringValue(currentCell));
+                             break; 
+                             case 8:
+                            	 volunteer.setProfile(getStringValue(currentCell));
+                             break; 
+                             case 9:
+                            	 volunteer.setImage_upload(getByteArrayValue(currentCell));
+                             break; 
                             default:
                              break;
 						}
 						cellId++;
 					}
-					list.add(volunteerDetails);
+					list.add(volunteer);
 				}
 					
 					

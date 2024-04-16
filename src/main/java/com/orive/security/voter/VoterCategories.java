@@ -1,6 +1,5 @@
 package com.orive.security.voter;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,25 +20,16 @@ import lombok.ToString;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "voter")
-public class Voter {
+@Table(name = "voter_categories")
+public class VoterCategories {
 
-	    @Id
-	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Long sl;
-	    
-	    @Column(name = "votername")
-	    private String votername;
-	    
-	    @Column(name = "mobilenumber")
-	    private String mobilenumber;
-	    
-	    @Column(name = "state")
-	    private String state;
-	    
-	    @Column(name = "district")
-	    private String district;
-	    
-	    @Column(name = "pincode")
-	    private String pincode;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long sl;
+	
+	@Column(name = "categories")
+	private String categories;
+	
+	@Column(name = "description", length = 4000)
+	private String description;
 }

@@ -1,4 +1,4 @@
-package com.orive.security.volunteerDetails;
+package com.orive.security.volunteers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

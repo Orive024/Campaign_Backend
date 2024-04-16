@@ -1,4 +1,4 @@
-package com.orive.security.volunteerDetails;
+package com.orive.security.volunteers;
 
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,7 +12,7 @@ import java.security.Key;
 import java.util.Base64;
 
 @Configuration
-public class VolunteerDetailsAesEncryptor implements AttributeConverter<Object, String> {
+public class VolunteersAesEncryptor implements AttributeConverter<Object, String> {
 
     @Value("${aes.encryption.key}")
     private String encryptionKey;

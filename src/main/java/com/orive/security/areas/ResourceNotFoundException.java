@@ -1,4 +1,4 @@
-package com.orive.security.volunteerDetails;
+package com.orive.security.areas;
 
 public class ResourceNotFoundException extends RuntimeException{
 

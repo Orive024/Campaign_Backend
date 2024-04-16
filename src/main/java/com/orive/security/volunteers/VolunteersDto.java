@@ -1,5 +1,4 @@
-package com.orive.security.volunteerDetails;
-
+package com.orive.security.volunteers;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,14 +13,18 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class VolunteerDetailsDto {
+public class VolunteersDto {
 
 	
-    private Long serialnumber;
-	private String volunteername;
-	private String volunteerid;
+    private Long sl;
+	private String name;
 	private String gender;
+	private String email;
 	private String address;
-	private Long mobilenumber;
-	private String emailaddress;
+	private String areaname;
+	private Long phone;
+	private String password;
+	private String profile;
+	private byte[] image_upload;
+
 }
