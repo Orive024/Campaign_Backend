@@ -28,21 +28,5 @@ public class Event {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long eventId;
 	
-	private String title;
-	
-	private String eventorganiser;
-	
-	private String eventlocation;
-	
-	private String eventcontactnumber;
-	
-	private LocalDate date;
-	
-	private String starttime;
-	
-	private String endtime;
-	
-	private String description;
-	
-	private String guests;
+	private String eventTitle;
 }
