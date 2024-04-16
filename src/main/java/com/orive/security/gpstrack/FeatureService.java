@@ -76,7 +76,7 @@ public class FeatureService {
     public Feature getByFeaturesId(Long featuresid) {
         //get user from database with the help  of user repository
     	Feature user = featureRepository.findById(featuresid).orElseThrow(() -> new ResourceNotFoundException("User with given id is not found on server !! : " + featuresid));
-        ArrayList<FeatureCollection> ratingsOfUser = restTemplate.getForObject("http://localhost:8080/api/featurecollection/features/" + user.getFeaturesid(), ArrayList.class);
+        ArrayList<FeatureCollection> ratingsOfUser = restTemplate.getForObject("http://localhost:7070/api/featurecollection/features/" + user.getFeaturesid(), ArrayList.class);
         logger.info("{} ", ratingsOfUser);
         user.setFeatureCollections(ratingsOfUser);
         return user;
