@@ -18,6 +18,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 
+
+
 @Service
 public class VoterDatabaseService {
 
@@ -78,8 +80,7 @@ private static final Logger logger= LoggerFactory.getLogger(VoterDatabaseService
         }
     }
 
-    //============================== Download Image ======================================================================
-    
+    //============================== Download Image =======================================================
     public byte[] downloadImage(String name) {
         Optional<VoterDatabase> dbImageData = voterDatabaseRepository.findByVoterName(name);
         if (dbImageData.isPresent()) {
@@ -95,6 +96,27 @@ private static final Logger logger= LoggerFactory.getLogger(VoterDatabaseService
         return null; // or return a default image byte array
     }
 
+  //============================== upload excelsheet  =======================================================  
+    public void save(MultipartFile file)
+	{
+		try {
+		List<VoterDatabase> voterDatabases=VoterExcelHelper.convertExcelToListOfvoters(file.getInputStream());
+		this.voterDatabaseRepository.saveAll(voterDatabases);
+		
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+    
+  //============================== get uplod excellsheet  =======================================================  
+	public List<VoterDatabase> getAllVoterdatabase()
+	{
+		return this.voterDatabaseRepository.findAll();
+		
+	}
+    
+    
+    
     //========================================== Read ====================================================================
     public List<VoterDatabaseDto> getAllVoterDatabase() {
         List<VoterDatabase> voterDatabases = voterDatabaseRepository.findAll();

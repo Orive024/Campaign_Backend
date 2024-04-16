@@ -27,6 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 
+
 @RestController
 @RequestMapping(value = "voterdatabase")
 @CrossOrigin(origins = "*")
@@ -85,6 +86,27 @@ public class VoterDataBaseController {
 	        }
 	    }
 
+	  //============================== upload excelsheet =======================================================     
+	    @PostMapping("/excelfile/upload")
+		public ResponseEntity<?> upload(@RequestParam("file") MultipartFile file)
+		{
+			if(VoterExcelHelper.chechExcelFormat(file))
+			{
+				//true
+				this.voterDatabaseService.save(file);
+				return ResponseEntity.ok(Map.of("message", "File is uploaded and data is saved to database"));
+			}
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("please upload excel file ");
+		}
+		
+
+	  //============================== get all excelsheet  =======================================================  
+		@GetMapping("/get/excelfile")
+		public List<VoterDatabase> getAllVoterDatabase()
+		{
+			return this.voterDatabaseService.getAllVoterdatabase();
+		}
+	    
 	//======================   Get all VoterDataBase =======================================================================  
 	    @GetMapping("/get/voterdatabase")
 	    public ResponseEntity<List<VoterDatabaseDto>> getAllVoterDataBase() {
