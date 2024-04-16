@@ -42,7 +42,7 @@ public class EventService {
         Optional<Event> existingEventOptional = eventRepository.findById(event.getEventId());
         if (existingEventOptional.isPresent()) {
             Event existingEvent = existingEventOptional.get();
-            existingEvent.setEventTitle(event.getEventTitle());
+            existingEvent.setTitle(event.getTitle());
             existingEvent.setDate(event.getDate());
             Event updatedEvent = eventRepository.save(existingEvent);
             logger.log(Level.INFO, "Event updated: " + updatedEvent.toString());

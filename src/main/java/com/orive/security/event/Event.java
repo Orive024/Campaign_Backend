@@ -30,5 +30,5 @@ public class Event {
 	
 	private LocalDate date;
 	
-	private String eventTitle;
+	private String title;
 }
