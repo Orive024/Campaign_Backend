@@ -120,5 +120,8 @@ private static final Logger logger= LoggerFactory.getLogger(VoterService.class);
 	    {
 	        return modelMapper.map(voter, VoterDto.class);
 	    } 
+	    
+	    
+	    
 
 }

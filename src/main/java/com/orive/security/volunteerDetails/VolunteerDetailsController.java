@@ -28,6 +28,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping(value = "volunteerdetails")
 @CrossOrigin(origins = "*")
+
 public class VolunteerDetailsController {
 	
 	

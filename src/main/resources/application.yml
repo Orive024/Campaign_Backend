@@ -8,9 +8,12 @@ spring:
   main:
     allow-bean-definition-overriding: true  
   datasource:
-    url: jdbc:mysql://localhost:3306/electioncampaign
-    username: root
-    password: Orive@123
+#    url: jdbc:mysql://localhost:3306/electioncampaign
+#    username: root
+#    password: Orive@123
+    url: jdbc:mysql://database-1.cn86imikwaj5.ap-south-1.rds.amazonaws.com:3306/electioncampaign
+    username: oriveadmin
+    password: orivedb2628
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: SEURITY-SERVICE   
@@ -63,12 +66,12 @@ logging:
       springframework:
         security: DEBUG
         
-#twilio:
-#  account:
-#    sid: AC9ce2e24fa85428c738462b5df8f468f4
-#  auth:
-#    token: 5687db3b8099c45c79499fd8985c3caf
-#  from:
-#    number: +16502001838 
+twilio:
+  account:
+    sid: AC9ce2e24fa85428c738462b5df8f468f4
+  auth:
+    token: 14e6154eb137fed37a0764eeb2466f6c
+  from:
+    number: +16502001838 
 otp:
   length: 6

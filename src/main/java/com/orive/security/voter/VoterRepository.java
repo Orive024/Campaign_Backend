@@ -12,4 +12,6 @@ public interface VoterRepository extends JpaRepository<Voter, Long>{
 	//query to find Voter By Pincode
     @Query("SELECT v FROM Voter v WHERE v.pincode = :pincode")
     List<Voter> findByPincode(@Param("pincode") String pincode);
+    
+   
 }
