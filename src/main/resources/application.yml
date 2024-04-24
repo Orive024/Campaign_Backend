@@ -1,16 +1,15 @@
 aes:
   encryption:
-    key: this-is-test-key
+    key: this-is-test-key  
 server:
-  port: 7070   
-    
+ port: 6060   
 spring:
   main:
     allow-bean-definition-overriding: true  
   datasource:
-#    url: jdbc:mysql://localhost:3306/electioncampaign
-#    username: root
-#    password: Orive@123
+#    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/electioncampaign
+#    username: ${MYSQL_USER:root}
+#    password: ${MYSQL_PASSWORD:Orive@123}
     url: jdbc:mysql://database-1.c10ku28k2ttw.ap-south-1.rds.amazonaws.com:3306/electioncampaign
     username: admin
     password: rootroot
