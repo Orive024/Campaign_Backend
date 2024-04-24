@@ -2,7 +2,7 @@ aes:
   encryption:
     key: this-is-test-key  
 server:
- port: 7070   
+ port: 6060   
 spring:
   main:
     allow-bean-definition-overriding: true  
